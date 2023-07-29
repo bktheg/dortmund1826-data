@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS "kataster_gebaeude"("ogc_fid" INTEGER PRIMARY KEY,'flur' BIGINT, 'zaehler' BIGINT, 'nenner' BIGINT, 'hnr' VARCHAR, 'strasse' VARCHAR, 'nebengeb' INTEGER, 'rotlabel' INTEGER, 'bezeichnung' VARCHAR, 'gemeinde' VARCHAR, 'nr' VARCHAR(10), 'katasternr' VARCHAR(6));
+SELECT AddGeometryColumn("kataster_gebaeude", "geometry", 4326, "POLYGON", 2);
+SELECT CreateSpatialIndex("kataster_gebaeude", "geometry");

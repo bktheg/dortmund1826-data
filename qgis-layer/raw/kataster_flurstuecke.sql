@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS 'kataster_flurstuecke' ( "ogc_fid" INTEGER PRIMARY KEY AUTOINCREMENT, 'id' BIGINT, 'flur' BIGINT, 'zaehler' BIGINT, 'nenner' BIGINT, 'typ' INTEGER, 'nr' VARCHAR, 'gemeinde' VARCHAR(32), 'rawtype' VARCHAR(31), 'hinweis' VARCHAR(512));
+SELECT AddGeometryColumn("kataster_flurstuecke", "geometry", 4326, "POLYGON", 2);
+SELECT CreateSpatialIndex("kataster_flurstuecke", "geometry");
